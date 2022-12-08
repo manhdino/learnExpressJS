@@ -1,9 +1,12 @@
 const express = require("express");
 //branch router
 const router = express.Router();
-router.get("/", (req, res) => {
-  res.send("This is from router"); // localhost: 3000/router/
+
+router.use("/", (req, res, next) => {
+  res.send("This is mid0");
+  console.log("mid0-r");
 });
+
 router.get("/username", (req, res) => {
   res.send("this is from router/username"); // localhost: 3000/router/username
 });
